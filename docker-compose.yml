@@ -5,7 +5,7 @@ services:
     container_name: vhtask-app
     build: .
     environment:
-      DATABASE_URL: "host=vhtask_db user=postgres password=postgres dbname=vhtask sslmode=disable"
+      DATABASE_URL: "host=vhtask_db user=${DB_USER} password=${DB_PASSWORD} dbname=${DB_NAME} sslmode=disable"
     ports:
       - "8080:8080"
     restart: on-failure
@@ -18,9 +18,9 @@ services:
     container_name: vhtask_db
     image: postgres:latest
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     ports:
       - "5432:5432"
     volumes:

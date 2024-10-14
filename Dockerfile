@@ -1,10 +1,14 @@
 FROM golang:alpine
 
+# Install git
+RUN apk update && apk add --no-cache git
+
 # Setup working directory
 WORKDIR /app
 
 # Copy the source code
 COPY . .
+COPY .env .
 
 # Download and install the dependencies
 RUN go get -d -v ./...
