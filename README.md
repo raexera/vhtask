@@ -62,9 +62,9 @@ cp ./.env.example ./.env
 3. Run with Docker Compose:
 
 ```sh
-docker-compose up --build
+docker compose up --build
 ```
 
-3. Access the Application: The API will be running at `http://localhost:8080`.
+4. Access the Application: The API will be running at `http://localhost:8080`.
 
-4. Swagger API Documentation: Visit `http://localhost:8080/swagger/index.html` for API documentation and testing.
+5. Swagger API Documentation: Visit `http://localhost:8080/swagger/index.html` for API documentation and testing.
